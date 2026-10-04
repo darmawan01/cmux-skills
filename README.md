@@ -34,6 +34,11 @@ curl -fsSL https://raw.githubusercontent.com/darmawan01/cmux-skills/main/install
 `install.sh` options: `--dev` (contributor skills too), `--skill NAME` (repeat for
 several), `--project` (install into `./.claude/skills`), `--dest DIR`, `--list`, `--dry-run`.
 
+Use the plugin **or** the copies, not both: two copies of a skill doubles its
+cost in every session and Claude can't tell which one to use. If the matching
+plugin is already installed, `install.sh` skips its skills and removes any copies an
+earlier run left behind. Use `--force` to keep both, or `--uninstall` to remove the copies.
+
 ## What's included
 
 ### `cmux` plugin: using the app
