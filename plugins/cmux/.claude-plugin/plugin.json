@@ -1,0 +1,14 @@
+{
+  "$schema": "https://anthropic.com/claude-code/plugin.schema.json",
+  "name": "cmux",
+  "version": "0.1.0",
+  "description": "Drive the cmux app from Claude Code: windows, workspaces, panes, browser automation, capture, Cloud VMs, settings, shortcuts, Markdown viewer, and diagnostics.",
+  "author": {
+    "name": "darmawan01",
+    "url": "https://github.com/darmawan01"
+  },
+  "homepage": "https://github.com/darmawan01/cmux-skills",
+  "repository": "https://github.com/darmawan01/cmux-skills",
+  "license": "GPL-3.0-or-later",
+  "keywords": ["cmux"]
+}

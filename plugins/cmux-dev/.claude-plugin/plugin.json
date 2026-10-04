@@ -1,0 +1,14 @@
+{
+  "$schema": "https://anthropic.com/claude-code/plugin.schema.json",
+  "name": "cmux-dev",
+  "version": "0.1.0",
+  "description": "Contributor rules for working inside a manaflow-ai/cmux checkout: architecture, testing, release, localization, Ghostty, backend, billing, and review.",
+  "author": {
+    "name": "darmawan01",
+    "url": "https://github.com/darmawan01"
+  },
+  "homepage": "https://github.com/darmawan01/cmux-skills",
+  "repository": "https://github.com/darmawan01/cmux-skills",
+  "license": "GPL-3.0-or-later",
+  "keywords": ["cmux"]
+}

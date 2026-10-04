@@ -1,0 +1,25 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "cmux-skills",
+  "description": "cmux agent skills from manaflow-ai/cmux, adapted for Claude Code.",
+  "owner": {
+    "name": "darmawan01",
+    "url": "https://github.com/darmawan01"
+  },
+  "plugins": [
+    {
+      "name": "cmux",
+      "source": "./plugins/cmux",
+      "description": "Drive the cmux app from Claude Code: windows, workspaces, panes, browser automation, capture, Cloud VMs, settings, shortcuts, Markdown viewer, and diagnostics.",
+      "category": "productivity",
+      "tags": ["cmux", "terminal", "browser-automation", "macos"]
+    },
+    {
+      "name": "cmux-dev",
+      "source": "./plugins/cmux-dev",
+      "description": "Contributor rules for working inside a manaflow-ai/cmux checkout: architecture, testing, release, localization, Ghostty, backend, billing, and review.",
+      "category": "development",
+      "tags": ["cmux", "swift", "contributing"]
+    }
+  ]
+}
