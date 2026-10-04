@@ -22,6 +22,7 @@ if [[ -z "${CMUX_SETTINGS:-}" ]]; then
   root="$(git rev-parse --show-toplevel 2>/dev/null || pwd)"
   CMUX_SETTINGS="$(find "$root/skills/cmux-settings/scripts" \
       "$HOME/.claude/skills/cmux-settings/scripts" \
+      "$HOME/.claude/plugins/marketplaces/cmux-skills" \
       "$HOME/.claude/plugins/cache" \
       -path '*cmux-settings/scripts/cmux-settings' -type f -perm -u+x 2>/dev/null | head -n 1)"
   [[ -n "$CMUX_SETTINGS" ]] || {

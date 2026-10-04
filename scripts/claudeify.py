@@ -35,6 +35,7 @@ if [[ -z "${CMUX_SETTINGS:-}" ]]; then
   root="$(git rev-parse --show-toplevel 2>/dev/null || pwd)"
   CMUX_SETTINGS="$(find "$root/skills/cmux-settings/scripts" \\
       "$HOME/.claude/skills/cmux-settings/scripts" \\
+      "$HOME/.claude/plugins/marketplaces/cmux-skills" \\
       "$HOME/.claude/plugins/cache" \\
       -path '*cmux-settings/scripts/cmux-settings' -type f -perm -u+x 2>/dev/null | head -n 1)"
   [[ -n "$CMUX_SETTINGS" ]] || {
@@ -156,7 +157,7 @@ the previous document was cached.
         "~/.codex/skills/cmux-diagnostics/scripts/cmux-diagnostics   # Codex-only skills.sh install\n",
         "skills/cmux-diagnostics/scripts/cmux-diagnostics            # cmux checkout\n"
         "~/.claude/skills/cmux-diagnostics/scripts/cmux-diagnostics  # install.sh copy\n"
-        "\"$(find ~/.claude/plugins/cache -path '*cmux-diagnostics/scripts/cmux-diagnostics' -type f | head -n 1)\"  # plugin install\n",
+        "\"$(find ~/.claude/plugins/marketplaces/cmux-skills ~/.claude/plugins/cache -path '*cmux-diagnostics/scripts/cmux-diagnostics' -type f | head -n 1)\"  # plugin install\n",
     )
     patch(
         diag / "SKILL.md",
@@ -222,7 +223,7 @@ section "hook configs"
         skills / "cmux-settings" / "SKILL.md",
         "~/.codex/skills/cmux-settings/scripts/cmux-settings <subcommand>   # installed Codex skill\n",
         "~/.claude/skills/cmux-settings/scripts/cmux-settings <subcommand>  # install.sh copy\n"
-        "\"$(find ~/.claude/plugins/cache -path '*cmux-settings/scripts/cmux-settings' -type f | head -n 1)\" <subcommand>  # plugin install\n",
+        "\"$(find ~/.claude/plugins/marketplaces/cmux-skills ~/.claude/plugins/cache -path '*cmux-settings/scripts/cmux-settings' -type f | head -n 1)\" <subcommand>  # plugin install\n",
     )
 
     # Illustrative examples: show the agent this copy is installed for.

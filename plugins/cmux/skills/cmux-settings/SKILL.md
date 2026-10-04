@@ -18,7 +18,7 @@ Use the bundled helper for every read/write. It strips JSONC comments, validates
 ```bash
 skills/cmux-settings/scripts/cmux-settings <subcommand>            # from a cmux checkout
 ~/.claude/skills/cmux-settings/scripts/cmux-settings <subcommand>  # install.sh copy
-"$(find ~/.claude/plugins/cache -path '*cmux-settings/scripts/cmux-settings' -type f | head -n 1)" <subcommand>  # plugin install
+"$(find ~/.claude/plugins/marketplaces/cmux-skills ~/.claude/plugins/cache -path '*cmux-settings/scripts/cmux-settings' -type f | head -n 1)" <subcommand>  # plugin install
 ```
 
 The rest of this doc assumes it is on `$PATH` as `cmux-settings`; from a checkout, `export PATH="$PWD/skills/cmux-settings/scripts:$PATH"`.

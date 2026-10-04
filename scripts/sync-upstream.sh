@@ -25,5 +25,21 @@ python3 scripts/claudeify.py "$tmp/skills" "$repo_root"
 cp "$tmp/LICENSE" LICENSE
 cp "$tmp/THIRD_PARTY_LICENSES.md" THIRD_PARTY_LICENSES.md
 
+old_sha="$(sed -n 's/^sha=//p' UPSTREAM)"
 printf 'repo=manaflow-ai/cmux\nref=%s\nsha=%s\n' "$ref" "$sha" > UPSTREAM
+
+# claude plugin update only picks up a new version, so bump the patch number.
+if [[ "$old_sha" != "$sha" ]]; then
+  for manifest in plugins/*/.claude-plugin/plugin.json; do
+    python3 - "$manifest" <<'PY'
+import json, sys
+path = sys.argv[1]
+data = json.load(open(path))
+major, minor, patch = data["version"].split(".")
+data["version"] = f"{major}.{minor}.{int(patch) + 1}"
+open(path, "w").write(json.dumps(data, indent=2) + "\n")
+print(f"{path}: {data['version']}")
+PY
+  done
+fi
 echo "Synced to $sha. Review with: git diff --stat"

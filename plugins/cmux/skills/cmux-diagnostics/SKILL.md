@@ -14,7 +14,7 @@ Run the bundled read-only script first, from whichever install path exists:
 ```bash
 skills/cmux-diagnostics/scripts/cmux-diagnostics            # cmux checkout
 ~/.claude/skills/cmux-diagnostics/scripts/cmux-diagnostics  # install.sh copy
-"$(find ~/.claude/plugins/cache -path '*cmux-diagnostics/scripts/cmux-diagnostics' -type f | head -n 1)"  # plugin install
+"$(find ~/.claude/plugins/marketplaces/cmux-skills ~/.claude/plugins/cache -path '*cmux-diagnostics/scripts/cmux-diagnostics' -type f | head -n 1)"  # plugin install
 ```
 
 Add `--include-context` only when workspace names, cwd paths, and current cmux identifiers are relevant to the reported issue.
